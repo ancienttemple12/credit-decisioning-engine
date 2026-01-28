@@ -30,6 +30,34 @@ decisioning concepts rather than a production system, and provides a
 foundation that could be extended with expected loss, profitability, or
 borrower take-up modelling.
 
+## Repository walkthrough
+
+The project is organised as a sequence of notebooks that mirror a typical
+credit decisioning workflow:
+
+1. **`01_build_target_and_clean.ipynb`**  
+   Data cleaning, target definition, and feature preparation using
+   origination-time information only.
+
+2. **`02_train_pd_model.ipynb`**  
+   Training and evaluation of a leakage-safe Probability of Default (PD)
+   model using a time-based train/test split. Model performance is assessed
+   using AUC and KS.
+
+3. **`03_credit_decisioning_engine.ipynb`**  
+   Translation of PD scores into lending decisions via risk banding,
+   approval rules, risk-based pricing, and credit limit assignment.
+   Portfolio-level outcomes are evaluated against observed defaults.
+
+Readers are encouraged to start with Notebook 03 for a high-level view of
+the decisioning logic, and refer to Notebooks 01 and 02 for modelling and
+data preparation details.
+- [Notebook 01 – Data prep](notebooks/01_build_target_and_clean.ipynb)
+- [Notebook 02 – PD model](notebooks/02_train_pd_model.ipynb)
+- [Notebook 03 – Decisioning engine](notebooks/03_credit_decisioning_engine.ipynb)
+
+
+
 
 ## Setup
 ```bash
