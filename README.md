@@ -54,7 +54,7 @@ the decisioning logic, and refer to Notebooks 01 and 02 for modelling and
 data preparation details.
 - [Notebook 01 – Data prep](notebooks/01_build_target_and_clean.ipynb)
 - [Notebook 02 – PD model](notebooks/02_train_pd_model.ipynb)
-- [Notebook 03 – Decisioning engine](notebooks/03-credit_decisioning_engine.ipynb)
+- [Notebook 03 – Decisioning engine](notebooks/03_credit_decisioning_engine.ipynb)
 
 
 
