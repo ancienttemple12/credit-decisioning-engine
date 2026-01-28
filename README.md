@@ -1,13 +1,35 @@
-# Credit Decisioning Engine (PD + Pricing + Limit Assignment)
+## Project Overview
 
-End-to-end credit decisioning project using LendingClub-style loan performance data.
+This project implements an end-to-end credit decisioning engine using
+LendingClub-style consumer loan data. The objective is to demonstrate how
+predicted default risk can be translated into practical lending decisions,
+rather than focusing solely on model accuracy.
 
-## What this repo does
-- Builds a leakage-safe Probability of Default (PD) model using origination features
-- Applies underwriting rules and generates decline reason codes
-- Assigns APR tiers (risk-based pricing)
-- Recommends an approved amount (limit/amount assignment)
-- Backtests acceptance rate vs bad rate vs expected profit
+The workflow mirrors a real-world consumer lending setup. A leakage-safe
+Probability of Default (PD) model is trained using origination-time features
+only and evaluated using standard credit risk metrics. The resulting PD scores
+are then mapped into risk bands and used to drive approval decisions,
+risk-based pricing, and credit limit assignment under an explicit risk
+appetite.
+
+Decisions are evaluated counterfactually against observed loan outcomes to
+highlight the trade-offs inherent in credit risk management. The project
+intentionally prioritises transparency and interpretability, reflecting how
+baseline models and policy frameworks are commonly deployed in production
+credit environments.
+
+### Key components
+- **PD modelling** using logistic regression and time-based train/test splits
+- **Risk banding** via quantile-based bucketing for stable policy evaluation
+- **Approval logic** based on configurable PD thresholds
+- **Risk-based pricing** and **approved amount assignment**
+- **Portfolio-level evaluation** using observed default outcomes
+
+This repository is designed as a practical demonstration of credit
+decisioning concepts rather than a production system, and provides a
+foundation that could be extended with expected loss, profitability, or
+borrower take-up modelling.
+
 
 ## Setup
 ```bash
